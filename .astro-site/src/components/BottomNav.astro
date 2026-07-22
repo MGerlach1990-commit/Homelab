@@ -1,0 +1,83 @@
+---
+import { formatLongDate } from '../lib/date';
+
+const footerDate = formatLongDate();
+---
+
+<footer class="bottom-nav">
+	<div class="footer-container">
+		<div class="footer-section">
+			<h4>Quick Links</h4>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/homelab">Homelab</a></li>
+				<li><a href="/deployment">Deployment</a></li>
+			</ul>
+		</div>
+		<div class="footer-section">
+			<h4>Legal</h4>
+			<ul>
+				<li><a href="/privacy-policy">Privacy Policy</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; {footerDate} Martin Gerlach. All rights reserved.</p>
+	</div>
+</footer>
+
+<style>
+	.bottom-nav {
+		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+		color: var(--surface);
+		padding: 3rem 0 1rem;
+		margin-top: 4rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.footer-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.footer-section h4 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		color: #fbbf24;
+	}
+
+	.footer-section ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-section li {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-section a {
+		color: #d1d5db;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-section a:hover {
+		color: #fbbf24;
+	}
+
+	.footer-bottom {
+		text-align: center;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		color: var(--surface);
+		font-size: 0.875rem;
+	}
+</style>

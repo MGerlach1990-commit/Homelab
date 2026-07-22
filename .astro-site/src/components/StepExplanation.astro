@@ -1,0 +1,86 @@
+---
+interface Props {
+	title: string;
+	intro?: string;
+	items?: string[];
+	listType?: 'ol' | 'ul';
+	code?: string;
+	outro?: string;
+	className?: string;
+}
+
+const {
+	title,
+	intro = '',
+	items = [],
+	listType = 'ol',
+	code,
+	outro = '',
+	className = '',
+} = Astro.props as Props;
+---
+
+<section class={`step-explanation ${className}`.trim()}>
+	<h3>{title}</h3>
+	{intro && <p set:html={intro} />}
+	{items.length > 0 &&
+		(listType === 'ul' ? (
+			<ul>
+				{items.map((item) => <li set:html={item} />)}
+			</ul>
+		) : (
+			<ol>
+				{items.map((item) => <li set:html={item} />)}
+			</ol>
+		))}
+	{code && (
+		<pre><code>{code}</code></pre>
+	)}
+	{outro && <p set:html={outro} />}
+	<slot />
+</section>
+
+<style>
+	.step-explanation {
+		margin: 2rem 0;
+	}
+
+	.step-explanation h3 {
+		font-size: 1.25rem;
+		margin: 1.5rem 0 1rem;
+		color: var(--text);
+	}
+
+	.step-explanation p {
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.step-explanation ol,
+	.step-explanation ul {
+		margin: 1rem 0;
+		padding-left: 2rem;
+		color: var(--text-muted);
+	}
+
+	.step-explanation li {
+		margin-bottom: 0.5rem;
+		line-height: 1.6;
+	}
+
+	.step-explanation pre {
+		background: var(--page-bg);
+		border: 1px solid rgba(37, 99, 235, 0.12);
+		border-radius: 0.5rem;
+		padding: 1rem;
+		overflow-x: auto;
+		margin: 1rem 0;
+	}
+
+	.step-explanation code {
+		font-family: 'Courier New', monospace;
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+</style>

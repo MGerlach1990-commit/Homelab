@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const hardwareList = ['Fritz!Box 7530 router', 'Raspberry Pi 4'];
+---
+
+<Layout>
+	<div class="homelab-container">
+		<h1>Homelab</h1>
+		<ul class="hardware-list">
+			{hardwareList.map((item) => <li>{item}</li>)}
+		</ul>
+	</div>
+</Layout>
+
+<style>
+	.homelab-container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+		color: var(--text);
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.75rem;
+		color: var(--text);
+	}
+
+	.intro {
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-muted);
+		margin-bottom: 1rem;
+	}
+
+	.hardware-list {
+		margin: 0;
+		padding-left: 1.4rem;
+		color: var(--text-muted);
+		line-height: 1.8;
+	}
+</style>

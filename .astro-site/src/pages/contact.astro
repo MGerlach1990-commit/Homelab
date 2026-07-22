@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InfoCard from '../components/InfoCard.astro';
+---
+
+<Layout>
+	<div class="contact-container">
+		<h1>Contact</h1>
+		<p>Have a question or want to get in touch? Send me an email directly:</p>
+
+		<InfoCard title="Contact details" className="email-card">
+			<span class="email-label">Address</span>
+			<address>
+				Martin Gerlach<br>
+				Poststraße 5<br>
+				38154 Königslutter<br>
+				Germany
+			</address>
+			<span class="email-label email-label--spaced">Email</span>
+			<a href="mailto:martin.gerlach1990@gmail.com" class="email-link" rel="external">
+				martin.gerlach1990@gmail.com
+			</a>
+		</InfoCard>
+	</div>
+</Layout>
+
+<style>
+	.contact-container {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+		color: var(--text);
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	p {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		margin-bottom: 2rem;
+	}
+
+	.email-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.email-label {
+		font-size: 0.85rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--accent-strong);
+	}
+
+	.email-link {
+		font-size: 1.1rem;
+		color: var(--text);
+		text-decoration: none;
+		font-weight: inherit;
+	}
+
+	.email-label--spaced {
+		margin-top: 1rem;
+	}
+
+	.email-link:hover {
+		text-decoration: underline;
+	}
+
+	address {
+		font-style: normal;
+		line-height: 1.8;
+		color: var(--text);
+	}
+</style>

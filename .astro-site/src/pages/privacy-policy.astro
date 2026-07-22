@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { formatLongDate } from '../lib/date';
+import InfoCard from '../components/InfoCard.astro';
+import ContactDetails from '../components/ContactDetails.astro';
+import PolicySection from '../components/PolicySection.astro';
+import { privacySections } from '../data/privacy';
+
+const lastUpdated = formatLongDate();
+---
+
+<Layout>
+	<div class="privacy-container">
+		<h1>Privacy Policy</h1>
+		
+		<InfoCard title="Programmer's Privacy Statement" className="programmer-statement">
+			<h2 class="statement-title">🔒 Programmer's Privacy Statement</h2>
+			<p><strong>As the programmer of this website, I explicitly state:</strong></p>
+			<ul>
+				<li><strong>No cookies are used</strong> on this website - I do not install, store, or deploy any cookies</li>
+				<li><strong>No data is collected</strong> from any visitors - I do not gather, store, or process any personal information from you</li>
+				<li><strong>No tracking occurs</strong> - I do not use analytics, pixels, beacons, or any tracking technologies</li>
+				<li><strong>No third-party services</strong> process your data - This is a standalone website with no external data processing</li>
+			</ul>
+			<p>You can visit this website completely anonymously and privately. I make no attempt to identify, track, or store information about you.</p>
+		</InfoCard>
+
+		<ContactDetails
+			title="2. Data Controller"
+			intro="Martin Gerlach is the Data Controller responsible for the processing of your personal data on the Martin Homelab website."
+			name="Martin Gerlach"
+			addressText={`Poststraße 5\n38154 Königslutter\nGermany`}
+			email="martin.gerlach1990@gmail.com"
+		/>
+
+		{privacySections.map((section) => (
+			<PolicySection 
+				title={section.title} 
+				paragraphs={section.title === '13. Changes to This Privacy Policy' 
+					? [...section.paragraphs.slice(0, -1), `Last Updated: ${lastUpdated}`]
+					: section.paragraphs
+				} 
+				items={section.items} 
+			/>
+		))}
+
+		<ContactDetails
+			title="12. Contact Information"
+			intro="For any questions regarding this Privacy Policy or your privacy, please contact:"
+			name="Martin Gerlach"
+			addressText={`Poststraße 5\n38154 Königslutter\nGermany`}
+			email="martin.gerlach1990@gmail.com"
+		/>
+
+	</div>
+</Layout>
+
+<style>
+	.privacy-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+		color: var(--text);
+		line-height: 1.6;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		color: var(--text);
+	}
+
+	a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.statement-title {
+		margin-top: 0;
+		color: var(--accent);
+	}
+</style>

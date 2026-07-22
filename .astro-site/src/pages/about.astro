@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InfoCard from '../components/InfoCard.astro';
+
+const benefits = [
+	{
+		title: 'Learning by Doing',
+		body: 'A homelab gives you a safe environment to experiment, break things, and fix them again - without any real-world consequences. There is no better way to learn networking, Linux, virtualisation, or system administration than hands-on practice.',
+	},
+	{
+		title: 'Full Control & Privacy',
+		body: 'Running your own servers means your data stays in your hands. No cloud provider, no third party - just you and your hardware. Self-hosting services like file storage, email, or media servers puts privacy back where it belongs.',
+	},
+	{
+		title: 'Skill Development',
+		body: 'Homelabs build real, marketable skills. Virtualisation with Proxmox or VMware, container orchestration with Docker and Kubernetes, network configuration, firewalls, and automation with Ansible or Terraform - all learnable at home.',
+	},
+	{
+		title: 'Cost-Effective Hardware',
+		body: 'Thin clients and single-board computers like the Raspberry Pi make homelabs accessible to everyone. These low-power, affordable devices can run services 24/7 without breaking the electricity bill.',
+	},
+	{
+		title: 'Career Advancement',
+		body: 'Employers value hands-on experience. A homelab demonstrates initiative, curiosity, and practical skills that no certification alone can show. It is a living portfolio of your technical capabilities.',
+	},
+	{
+		title: 'Self-Sufficiency',
+		body: 'With a homelab, you become less dependent on external services. Host your own VPN, DNS, backup solutions, and monitoring. When the cloud goes down, your homelab keeps running.',
+	},
+];
+
+const startingPoints = [
+	{
+		title: 'When to Start',
+		body: 'The best time to start a homelab is right now. You do not need expensive hardware or deep technical knowledge to begin. If you are curious about how computers and networks work, that curiosity is all you need. Whether you are a student, a professional, or a hobbyist - there is no wrong time to start.',
+	},
+	{
+		title: 'Start Small',
+		body: 'Begin with what you already have. An old laptop, a spare desktop, or a Raspberry Pi is enough to get started. Install Linux, set up a simple web server, or run a home media server. Small wins build confidence and momentum.',
+	},
+	{
+		title: 'Choose Your Hardware',
+		body: 'Thin clients are an excellent starting point - they are cheap, silent, low-power, and widely available second-hand. Popular choices include the HP t620, Fujitsu Futro, or Dell Wyse. Raspberry Pi boards are perfect for lightweight tasks and IoT projects.',
+	},
+	{
+		title: 'Pick Your Operating System',
+		body: 'Linux is the foundation of almost every homelab. Start with Ubuntu Server or Debian for simplicity. Once comfortable, explore Proxmox VE to run multiple virtual machines and containers on a single machine.',
+	},
+	{
+		title: 'Run Your First Services',
+		body: 'Install Docker and start deploying services. Popular first projects include Pi-hole, Nextcloud, Home Assistant, and Plex or Jellyfin.',
+	},
+	{
+		title: 'Expand Gradually',
+		body: 'As your skills grow, so does your lab. Add a network switch, set up VLANs, configure a firewall with pfSense or OPNsense, build a NAS for storage, and automate tasks with scripts or Ansible. There is always something new to learn.',
+	},
+];
+---
+
+<Layout>
+	<div class="about-container">
+		<h1>About</h1>
+		<h2 class="subtitle">Why is a Homelab Very Important?</h2>
+
+		<p class="intro">A homelab is a personal setup of computers, servers, and networking equipment at home. It is one of the most valuable tools for anyone passionate about technology.</p>
+
+		<div class="card-grid">
+			{benefits.map((item) => (
+				<InfoCard title={item.title}>
+					<p>{item.body}</p>
+				</InfoCard>
+			))}
+		</div>
+
+		<div class="conclusion">
+			<p>Whether you start with a single Raspberry Pi or a rack of used enterprise servers, a homelab is an investment in yourself. It grows with you and rewards every hour you put into it.</p>
+		</div>
+
+		<h2 class="section-title">When and How to Start a Homelab</h2>
+
+		<div class="card-grid">
+			{startingPoints.map((item) => (
+				<InfoCard title={item.title}>
+					<p>{item.body}</p>
+				</InfoCard>
+			))}
+		</div>
+
+		<div class="conclusion">
+			<p>Every expert homelab builder started exactly where you are now. Take the first step, make mistakes, learn from them, and enjoy the journey. Your homelab is yours — build it your way.</p>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.about-container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+		color: var(--text);
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+		color: var(--text);
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		color: var(--accent);
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
+
+	.intro {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		margin-bottom: 2rem;
+		line-height: 1.7;
+	}
+
+	.card-grid {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.conclusion {
+		margin-top: 2rem;
+		padding: 1.5rem;
+		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+		border-radius: 8px;
+		color: #ffffff;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.conclusion p {
+		margin: 0;
+	}
+
+	.section-title {
+		font-size: 1.75rem;
+		color: var(--text);
+		margin: 3rem 0 1.5rem 0;
+		padding-bottom: 0.5rem;
+		border-bottom: 3px solid var(--accent);
+	}
+</style>

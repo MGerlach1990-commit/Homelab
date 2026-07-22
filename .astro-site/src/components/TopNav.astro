@@ -1,0 +1,68 @@
+---
+---
+
+<nav class="top-nav">
+	<div class="nav-container">
+		<div class="logo">
+			<a href="/">Martin Homelab</a>
+		</div>
+		<ul class="nav-links">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/homelab">Homelab</a></li>
+			<li><a href="/deployment">Deployment</a></li>
+			<li><a href="/privacy-policy">Privacy Policy</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</div>
+</nav>
+
+<style>
+	.top-nav {
+		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+		color: var(--surface);
+		padding: 1rem 0;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+	}
+
+	.nav-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo a {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--surface);
+		text-decoration: none;
+	}
+
+	.logo a:hover {
+		color: #fbbf24;
+	}
+
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-links a {
+		color: var(--surface);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links a:hover {
+		color: #fbbf24;
+	}
+</style>

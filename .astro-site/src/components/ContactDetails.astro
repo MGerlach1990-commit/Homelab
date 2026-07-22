@@ -1,0 +1,53 @@
+---
+interface Props {
+	title: string;
+	intro: string;
+	name: string;
+	addressText: string;
+	email: string;
+}
+
+const { title, intro, name, addressText, email } = Astro.props as Props;
+---
+
+<section class="contact-details">
+	<h2>{title}</h2>
+	<p>{intro}</p>
+	<p>
+		<strong>{name}</strong><br />
+		<span class="contact-details__address">{addressText}</span><br />
+		<a href={`mailto:${email}`}>{email}</a>
+	</p>
+</section>
+
+<style>
+	.contact-details {
+		margin-bottom: 2rem;
+	}
+
+	.contact-details h2 {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	.contact-details p {
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+	}
+
+	.contact-details__address {
+		white-space: pre-line;
+	}
+
+	.contact-details a {
+		color: var(--text);
+		font-weight: inherit;
+		text-decoration: none;
+	}
+
+	.contact-details a:hover {
+		text-decoration: underline;
+	}
+</style>

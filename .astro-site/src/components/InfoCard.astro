@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+	className?: string;
+}
+
+const { title, className = '' } = Astro.props as Props;
+---
+
+<article class={`info-card ${className}`.trim()}>
+	<h3>{title}</h3>
+	<div class="info-card__body">
+		<slot />
+	</div>
+</article>
+
+<style>
+	.info-card {
+		background: var(--surface);
+		border: 1px solid rgba(37, 99, 235, 0.12);
+		border-left: 4px solid var(--accent);
+		border-radius: 1rem;
+		padding: 1.25rem 1.5rem;
+		box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+	}
+
+	.info-card h3 {
+		margin: 0 0 0.75rem;
+		font-size: 1.1rem;
+		color: var(--accent-strong);
+	}
+
+	.info-card__body :global(p) {
+		margin: 0;
+		line-height: 1.7;
+		color: var(--text-muted);
+	}
+
+	.info-card__body :global(p + p) {
+		margin-top: 0.75rem;
+	}
+</style>

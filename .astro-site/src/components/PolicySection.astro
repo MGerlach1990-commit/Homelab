@@ -1,0 +1,49 @@
+---
+interface Props {
+	title: string;
+	paragraphs?: string[];
+	items?: string[];
+	className?: string;
+}
+
+const { title, paragraphs = [], items = [], className = '' } = Astro.props as Props;
+---
+
+<section class={`policy-section ${className}`.trim()}>
+	<h2>{title}</h2>
+	{paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+	{items.length > 0 && (
+		<ul>
+			{items.map((item) => <li>{item}</li>)}
+		</ul>
+	)}
+	<slot />
+</section>
+
+<style>
+	.policy-section {
+		margin-bottom: 2rem;
+	}
+
+	.policy-section h2 {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	.policy-section p {
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+	}
+
+	.policy-section ul {
+		margin: 1rem 0;
+		padding-left: 2rem;
+	}
+
+	.policy-section li {
+		margin-bottom: 0.5rem;
+		color: var(--text-muted);
+	}
+</style>

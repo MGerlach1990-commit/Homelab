@@ -1,0 +1,67 @@
+---
+import { formatLongDate } from '../lib/date';
+
+const imageDate = formatLongDate();
+---
+
+<section class="hero">
+	<h1>Welcome to Martin Homelab</h1>
+	<p>Your personal homelab and technology hub</p>
+	<img
+		src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800&auto=format&fit=crop"
+		alt="nerd_programming_code"
+		class="hero-image"
+	/>
+	<p class="image-credit">© {imageDate} Photo by <a href="https://unsplash.com/@unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+</section>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 4rem 2rem;
+		background-color: white;
+		min-height: 60vh;
+		text-align: center;
+	}
+
+	h1 {
+		margin: 0 0 1rem 0;
+		font-size: 3rem;
+		font-weight: bold;
+		color: var(--text);
+	}
+
+	p {
+		margin: 0 0 2.5rem 0;
+		font-size: 1.25rem;
+		color: var(--text-muted);
+	}
+
+	.hero-image {
+		width: 100%;
+		max-width: 700px;
+		border-radius: 12px;
+		box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+	}
+
+	.image-credit {
+		margin-top: 0.5rem;
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		text-align: left;
+		max-width: 700px;
+		width: 100%;
+	}
+
+	.image-credit a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	.image-credit a:hover {
+		text-decoration: underline;
+	}
+</style>
