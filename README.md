@@ -1,3 +1,3 @@
 ﻿# Homelab
 This is a website of Martin Gerlach - named MGerlach1990-commit - about his homelab.
-This website is written in Astro.
+This website is written in Astro and Typescript - more Astro than Typescript.
