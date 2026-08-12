@@ -2,29 +2,29 @@
 
 A modern, privacy-first website built with Astro. Features a clean design with no cookies, no tracking, and no data collection.
 
-## ??? Tech Stack
+## Tech Stack
 
 - **Astro 7.0.7** - Static site generation
 - **TypeScript** - Type safety
 - **React Integration** - For future interactive components
 - **Node.js** - Runtime environment
 
-## ?? Project Structure
+## Project Structure
 
 ```
 src/
 +-- components/
-�   +-- TopNav.astro      - Sticky top navigation bar
-�   +-- BottomNav.astro   - Footer navigation
-�   +-- Welcome.astro     - Hero section
+   +-- TopNav.astro      - Sticky top navigation bar
+   +-- BottomNav.astro   - Footer navigation
+   +-- Welcome.astro     - Hero section
 +-- layouts/
-�   +-- Layout.astro      - Root layout with navigation
+   +-- Layout.astro      - Root layout with navigation
 +-- pages/
     +-- index.astro       - Home page
     +-- privacy-policy.astro - GDPR privacy policy
 ```
 
-## ?? Commands
+##  Commands
 
 | Command | Action |
 |---------|--------|
@@ -32,10 +32,10 @@ src/
 | `npm run build` | Build production site to `./dist/` |
 | `npm run preview` | Preview production build locally |
 
-## ?? Privacy
+##  Privacy
 
 This website collects **no personal data**. There are no cookies, no analytics, and no tracking technologies. Visit completely anonymously.
 
-## ?? License
+##  License
 
-All rights reserved � 2026 Martin Homelab
+All rights reserved (c) 2026 Martin Homelab
