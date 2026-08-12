@@ -1,3 +1,41 @@
-﻿# Homelab
-This is a website of Martin Gerlach - named MGerlach1990-commit - about his homelab.
-This website is written in Astro and Typescript - more Astro than Typescript.
+﻿# Martin Homelab
+
+A modern, privacy-first website built with Astro. Features a clean design with no cookies, no tracking, and no data collection.
+
+## Tech Stack
+
+- **Astro 7.0.7** - Static site generation
+- **TypeScript** - Type safety
+- **React Integration** - For future interactive components
+- **Node.js** - Runtime environment
+
+## Project Structure
+
+```
+src/
++-- components/
+   +-- TopNav.astro      - Sticky top navigation bar
+   +-- BottomNav.astro   - Footer navigation
+   +-- Welcome.astro     - Hero section
++-- layouts/
+   +-- Layout.astro      - Root layout with navigation
++-- pages/
+    +-- index.astro       - Home page
+    +-- privacy-policy.astro - GDPR privacy policy
+```
+
+##  Commands
+
+| Command | Action |
+|---------|--------|
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+
+##  Privacy
+
+This website collects **no personal data**. There are no cookies, no analytics, and no tracking technologies. Visit completely anonymously.
+
+##  License
+
+All rights reserved &copy; 2026 Martin Homelab
