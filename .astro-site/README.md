@@ -6,8 +6,8 @@ A modern, privacy-first website built with Astro. Features a clean design with n
 
 - **Astro 7.0.7** - Static site generation
 - **TypeScript** - Type safety
-- **React Integration** - For future interactive components
-- **Node.js** - Runtime environment
+- **React 19** - Interactive components, integrated via `@astrojs/react`
+- **Node.js** - Runtime environment (>= 22.12.0)
 
 ## Project Structure
 
@@ -40,7 +40,7 @@ src/
    +-- privacy-policy.astro - GDPR privacy policy
 ```
 
-##  Commands
+## Commands
 
 | Command | Action |
 |---------|--------|
@@ -48,10 +48,10 @@ src/
 | `npm run build` | Build production site to `./dist/` |
 | `npm run preview` | Preview production build locally |
 
-##  Privacy
+## Privacy
 
 This website collects **no personal data**. There are no cookies, no analytics, and no tracking technologies. Visit completely anonymously.
 
-##  License
+## License
 
 All rights reserved &copy; 2026 Martin Homelab
