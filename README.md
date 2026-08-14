@@ -11,17 +11,36 @@ A modern, privacy-first website built with Astro. Features a clean design with n
 
 ## Project Structure
 
+The website lives in the `.astro-site/` subdirectory.
+
 ```
-src/
-+-- components/
-   +-- TopNav.astro      - Sticky top navigation bar
-   +-- BottomNav.astro   - Footer navigation
-   +-- Welcome.astro     - Hero section
-+-- layouts/
-   +-- Layout.astro      - Root layout with navigation
-+-- pages/
-    +-- index.astro       - Home page
-    +-- privacy-policy.astro - GDPR privacy policy
+.astro-site/
++-- src/
+   +-- assets/
+      +-- astro.svg
+      +-- background.svg
+   +-- components/
+      +-- TopNav.astro         - Sticky top navigation bar
+      +-- BottomNav.astro      - Footer navigation
+      +-- Welcome.astro        - Hero section
+      +-- ContactDetails.astro - Contact information
+      +-- InfoCard.astro       - Info card component
+      +-- PolicySection.astro  - Privacy policy section
+      +-- StepExplanation.astro- Step-by-step explanation
+   +-- data/
+      +-- deployment.ts        - Deployment data
+      +-- privacy.ts           - Privacy policy content
+   +-- layouts/
+      +-- Layout.astro         - Root layout with navigation
+   +-- lib/
+      +-- date.ts              - Date helpers
+   +-- pages/
+      +-- index.astro          - Home page
+      +-- about.astro          - About page
+      +-- contact.astro        - Contact page
+      +-- deployment.astro     - Deployment page
+      +-- homelab.astro        - Homelab page
+      +-- privacy-policy.astro - GDPR privacy policy
 ```
 
 ##  Commands
