@@ -33,6 +33,14 @@ const lastUpdated = formatLongDate();
 			email="martin.gerlach1990@gmail.com"
 		/>
 
+		<ContactDetails
+			title="12. Contact Information"
+			intro="For any questions regarding this Privacy Policy or your privacy, please contact:"
+			name="Martin Gerlach"
+			addressText={`Poststraße 5\n38154 Königslutter\nGermany`}
+			email="martin.gerlach1990@gmail.com"
+		/>
+
 		{privacySections.map((section) => (
 			<PolicySection 
 				title={section.title} 
@@ -43,14 +51,6 @@ const lastUpdated = formatLongDate();
 				items={section.items} 
 			/>
 		))}
-
-		<ContactDetails
-			title="12. Contact Information"
-			intro="For any questions regarding this Privacy Policy or your privacy, please contact:"
-			name="Martin Gerlach"
-			addressText={`Poststraße 5\n38154 Königslutter\nGermany`}
-			email="martin.gerlach1990@gmail.com"
-		/>
 
 	</div>
 </Layout>
