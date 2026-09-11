@@ -25,6 +25,14 @@ const lastUpdated = formatLongDate();
 			<p>You can visit this website completely anonymously and privately. I make no attempt to identify, track, or store information about you.</p>
 		</InfoCard>
 
+		{privacySections.filter((section) => section.title === '1. Introduction').map((section) => (
+			<PolicySection 
+				title={section.title} 
+				paragraphs={section.paragraphs} 
+				items={section.items} 
+			/>
+		))}
+
 		<ContactDetails
 			title="2. Data Controller"
 			intro="Martin Gerlach is the Data Controller responsible for the processing of your personal data on the Martin Homelab website."
@@ -32,6 +40,14 @@ const lastUpdated = formatLongDate();
 			addressText={`Poststraße 5\n38154 Königslutter\nGermany`}
 			email="martin.gerlach1990@gmail.com"
 		/>
+
+		{privacySections.filter((section) => !['1. Introduction', '13. Changes to This Privacy Policy'].includes(section.title)).map((section) => (
+			<PolicySection 
+				title={section.title} 
+				paragraphs={section.paragraphs} 
+				items={section.items} 
+			/>
+		))}
 
 		<ContactDetails
 			title="12. Contact Information"
@@ -41,13 +57,10 @@ const lastUpdated = formatLongDate();
 			email="martin.gerlach1990@gmail.com"
 		/>
 
-		{privacySections.map((section) => (
+		{privacySections.filter((section) => section.title === '13. Changes to This Privacy Policy').map((section) => (
 			<PolicySection 
 				title={section.title} 
-				paragraphs={section.title === '13. Changes to This Privacy Policy' 
-					? [...section.paragraphs.slice(0, -1), `Last Updated: ${lastUpdated}`]
-					: section.paragraphs
-				} 
+				paragraphs={[...section.paragraphs.slice(0, -1), `Last Updated: ${lastUpdated}`]} 
 				items={section.items} 
 			/>
 		))}
