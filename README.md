@@ -47,6 +47,7 @@ The website lives in the `.astro-site/` subdirectory.
 
 | Command | Action |
 |---------|--------|
+| `npm install` | Install project dependencies |
 | `npm run dev` | Start dev server at `localhost:4321` |
 | `npm run build` | Build production site to `./dist/` |
 | `npm run preview` | Preview production build locally |
