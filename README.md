@@ -57,5 +57,5 @@ The website lives in the `.astro-site/` subdirectory.
 This website collects **no personal data**. There are no cookies, no analytics, and no tracking technologies. Visit completely anonymously.
 
 ## License
-
+MIT License
 All rights reserved &copy; 2026 Martin Homelab. Built with Astro.
