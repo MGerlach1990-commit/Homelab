@@ -58,4 +58,6 @@ This website collects **no personal data**. There are no cookies, no analytics, 
 
 ## License
 MIT License
-All rights reserved &copy; 2026 Martin Homelab. Built with Astro.
+
+Copyright (c) 2026 Martin Gerlach
+Built with Astro.
